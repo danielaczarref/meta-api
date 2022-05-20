@@ -27,6 +27,7 @@ public class UserController {
     }
 
     @GetMapping(value="/cpfUser={cpfUser}")
+    @CrossOrigin(origins = "http://localhost:9090")
     public ResponseEntity<UserModel> getUserByCPF(@PathVariable String cpfUser) {
         return ResponseEntity.ok().body(userService.getByCPF(cpfUser));
     }
